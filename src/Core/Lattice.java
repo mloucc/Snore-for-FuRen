@@ -1,3 +1,5 @@
+package Core;
+
 
 
 import java.util.ArrayList;
@@ -31,5 +33,22 @@ public class Lattice {
     public void addCat(Category cat_) {
         cats.add(cat_);
     }
+    
+    public void showRouph() {
+        show("Lattice: " + name);
+        for (Category cat: cats) {
+            show("  Cat: " + cat.name + ", Size: " + cat.chains.size());
+        }        
+    }
 
+    public void showDetail() {
+        show("Lattice: " + name);
+        for (Category cat: cats) {
+            show("  Cat: " + cat.name + ", Size: " + cat.chains.size());
+            cat.showRouph();
+        }        
+    }
+    public void show(String str) {
+        System.out.println(str);
+    }
 }
